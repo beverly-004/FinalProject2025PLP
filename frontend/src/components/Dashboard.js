@@ -6,13 +6,15 @@ export default function Dashboard() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+   const API = "https://aquaproject.onrender.com";
+
   // Filters
   const [safetyFilter, setSafetyFilter] = useState("all"); // all | safe | unsafe | unknown
   const [queueFilter, setQueueFilter] = useState("all"); // all | Low | Medium | High | Unknown
   const [unsafeOnly, setUnsafeOnly] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/dashboard")
+    axios.get("${API}/api/dashboard")
       .then((res) => {
         setData(res.data);
         setLoading(false);
@@ -68,12 +70,12 @@ export default function Dashboard() {
 
   const updateQueue = async (id, newStatus) => {
   try {
-    await axios.post(`http://localhost:5000/api/queue/update/${id}`, {
+    await axios.post(`${API}/api/queue/update/${id}`, {
       status: newStatus,
     });
 
     // Refresh dashboard data
-    const res = await axios.get("http://localhost:5000/api/dashboard");
+    const res = await axios.get("${API}/api/dashboard");
     setData(res.data);
 
     alert(`Queue updated to ${newStatus}`);
@@ -89,10 +91,10 @@ const clearIssues = async (id) => {
     return;
 
   try {
-    await axios.post(`http://localhost:5000/api/admin/clear/${id}`);
+    await axios.post(``);
 
     // Refresh dashboard
-    const res = await axios.get("http://localhost:5000/api/dashboard");
+    const res = await axios.get("${API}/api/admin/clear/${id}");
     setData(res.data);
 
     alert("Water point marked as safe!");

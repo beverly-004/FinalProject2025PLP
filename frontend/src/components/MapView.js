@@ -4,6 +4,8 @@ import L from "leaflet";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import MapViewSkeleton from "./skeletons/MapViewSkeleton";
+import API from "../api";
+
 
 // Marker icons
 const safeIcon = L.icon({

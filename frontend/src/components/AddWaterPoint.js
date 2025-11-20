@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API from "../api";
 
 export default function AddWaterPoint() {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ export default function AddWaterPoint() {
   });
 
    const API = "https://aquaproject.onrender.com";
+   
 
   const update = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,7 +24,8 @@ export default function AddWaterPoint() {
     e.preventDefault();
 
     try {
-      await axios.post("${API}/api/waterpoints/add", {
+      await axios.post("https://aquaproject.onrender.com/api/waterpoints/add", {
+
         name: form.name,
         location: form.location,
         lat: Number(form.lat),

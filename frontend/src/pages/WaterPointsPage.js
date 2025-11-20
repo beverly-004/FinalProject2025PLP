@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import API from "../api";
+
 
 export default function WaterPointsPage() {
   const [points, setPoints] = useState([]);
@@ -8,7 +10,8 @@ export default function WaterPointsPage() {
 
    const API = "https://aquaproject.onrender.com";
 
-useEffect(() => { axios.get("${API}/api/dashboard`") .
+useEffect(() => { axios.get("https://aquaproject.onrender.com/api/dashboard")
+ .
   then(res => { setPoints(res.data);
      setLoading(false); }) 
      .catch(err => 
