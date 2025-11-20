@@ -15,6 +15,9 @@ import adminRoutes from "./routes/adminRoutes.js";
 import queueStatusRoutes from "./routes/queueStatusRoutes.js";
 import waterPointRoutes from "./routes/waterPointRoutes.js";
 import adminAddRoutes from "./routes/adminAddRoutes.js";
+import seedRoutes from "./routes/seedRoutes.js";
+
+
 
 // Fix __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -46,6 +49,9 @@ app.use(express.json());
 // ROUTES — clean, organized, NO duplicates
 app.use("/api/waterpoints", waterRoutes);
 app.use("/api/waterpoints", waterPointRoutes);
+
+app.use("/api/admin", seedRoutes);
+
 
 app.use("/api/dashboard", dashboardRoutes);
 
