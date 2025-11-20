@@ -1,0 +1,189 @@
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 91, 187, 0.5),
+    rgba(0, 91, 187, 0.6)
+  );
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  max-width: 600px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+}
+
+.hero-btn {
+  margin-top: 20px;
+  padding: 14px 30px;
+  background: white;
+  color: #0051c9;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #0051c9;
+  color: white;
+}
+
+/* FEATURES */
+.features-section {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #003e91;
+}
+
+.subtitle {
+  color: #555;
+  max-width: 600px;
+  margin: 10px auto 40px;
+  font-size: 1.1rem;
+}
+
+/* Grid Layout */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+/* Flip Card Core */
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 260px;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Back side */
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+/* Icon styles */
+.icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+/* Text */
+.section-title {
+  text-align: center;
+  color: #1d4ed8;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* Back side */
+.flip-back {
+  background: #0051c9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Icons */
+.icon {
+  width: 55px;
+  margin: 0 auto 10px;
+}
+
+.footer {
+  margin-top: 60px;
+  padding: 25px;
+  background: #003e91;
+  color: white;
+  text-align: center;
+}
+
+.footer .socials i {
+  margin: 0 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
