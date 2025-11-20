@@ -13,6 +13,8 @@ export default function AddWaterPoint() {
     isSafe: true,
   });
 
+   const API = "https://aquaproject.onrender.com";
+
   const update = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -20,7 +22,7 @@ export default function AddWaterPoint() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/waterpoints/add", {
+      await axios.post("${API}/api/waterpoints/add", {
         name: form.name,
         location: form.location,
         lat: Number(form.lat),

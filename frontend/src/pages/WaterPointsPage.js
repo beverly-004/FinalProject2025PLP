@@ -6,14 +6,14 @@ export default function WaterPointsPage() {
   const [points, setPoints] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    axios.get("http://localhost:5000/api/dashboard")
-      .then(res => {
-        setPoints(res.data);
-        setLoading(false);
-      })
-      .catch(err => console.error("Error loading water points:", err));
-  }, []);
+   const API = "https://aquaproject.onrender.com";
+
+useEffect(() => { axios.get("${API}/api/dashboard`") .
+  then(res => { setPoints(res.data);
+     setLoading(false); }) 
+     .catch(err => 
+      console.error("Error loading water points:", err)); }, []);
+
 
   if (loading) {
     return <p className="p-6">Loading water points...</p>;
@@ -109,8 +109,7 @@ export default function WaterPointsPage() {
                 onClick={async () => {
                   const msg = prompt("Describe the issue:");
                   if (!msg) return;
-
-                  await axios.post(`http://localhost:5000/api/issues/report/${wp._id}`, { message: msg });
+                   await axios.post(`${API}/api/issues/report/${wp._id}`, { message: msg });
                   alert("Issue reported!");
                 }}
                 className="bg-red-600 text-white px-3 py-1 rounded"
@@ -122,8 +121,8 @@ export default function WaterPointsPage() {
               {(!wp.isSafe || wp.issueCount > 0) && (
                 <button
                   onClick={async () => {
-                    await axios.post(`http://localhost:5000/api/admin/clear/${wp._id}`);
-                    const res = await axios.get("http://localhost:5000/api/dashboard");
+                    await axios.post(`${API}/api/admin/clear/${wp._id}`);
+                    const res = await axios.get("${API}/api/dashboard");
                     setPoints(res.data);
                     alert("Marked as safe!");
                   }}

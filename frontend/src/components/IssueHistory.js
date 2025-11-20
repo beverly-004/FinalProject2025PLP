@@ -6,9 +6,12 @@ export default function IssueHistory() {
   const { id } = useParams();
   const [history, setHistory] = useState(null);
 
+    // deployed backend URL
+  const API = "https://aquaproject.onrender.com";
+
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/history/${id}`)
+      .get(`${API}/api/history/${id}`)
       .then((res) => setHistory(res.data))
       .catch((err) => console.error("Error loading issue history:", err));
   }, [id]);

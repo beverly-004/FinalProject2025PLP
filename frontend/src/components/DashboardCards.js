@@ -7,6 +7,8 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  const API = "https://aquaproject.onrender.com";
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -14,7 +16,7 @@ export default function Dashboard() {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/dashboard");
+      const res = await axios.get("`${API}/api/dashboard`");
       setData(res.data);
     } catch (err) {
       console.error("Error fetching dashboard data:", err);
@@ -27,7 +29,7 @@ export default function Dashboard() {
     const message = prompt("Describe the issue:");
     if (!message) return;
     try {
-      await axios.post(`http://localhost:5000/api/issues/report/${id}`, { message });
+      await axios.post(`${API}/api/issues/report/${id}`, { message });
       alert("Issue reported. Thanks!");
       fetchData();
     } catch (err) {
@@ -38,7 +40,7 @@ export default function Dashboard() {
 
   const updateQueue = async (id, status) => {
     try {
-      await axios.post(`http://localhost:5000/api/queue/update/${id}`, { status });
+      await axios.post(`${API}/api/queue/update/${id}`, { status });
       await fetchData();
     } catch (err) {
       console.error("Queue update error:", err);
@@ -49,7 +51,7 @@ export default function Dashboard() {
   const clearIssues = async (id) => {
     if (!window.confirm("Mark this water point as safe and clear issues?")) return;
     try {
-      await axios.post(`http://localhost:5000/api/admin/clear/${id}`);
+      await axios.post(`${API}/api/admin/clear/${id}`);
       await fetchData();
       alert("Water point marked safe and issues cleared.");
     } catch (err) {

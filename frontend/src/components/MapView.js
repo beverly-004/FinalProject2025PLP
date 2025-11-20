@@ -43,10 +43,13 @@ export default function MapView() {
   const [selectedPoint, setSelectedPoint] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // ✅ Corrected & ONLY useEffect for fetching map data
+  // DEPLOYED BACKEND URL
+  const API = "https://aquaproject.onrender.com";
+
+  // Fetch data
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/dashboard")
+      .get(`${API}/api/dashboard`)
       .then((res) => {
         setWaterPoints(res.data);
         setLoading(false);
@@ -57,7 +60,6 @@ export default function MapView() {
       });
   }, []);
 
-  // ✅ Skeleton loader
   if (loading) return <MapViewSkeleton />;
 
   // Report Issue
@@ -65,9 +67,7 @@ export default function MapView() {
     const message = prompt("Describe the issue:");
     if (!message) return;
 
-    await axios.post(`http://localhost:5000/api/issues/report/${id}`, {
-      message,
-    });
+    await axios.post(`${API}/api/issues/report/${id}`, { message });
 
     alert("Issue reported successfully!");
   };
@@ -75,11 +75,11 @@ export default function MapView() {
   // Update queue
   const updateQueue = async (id, newStatus) => {
     try {
-      await axios.post(`http://localhost:5000/api/queue/update/${id}`, {
+      await axios.post(`${API}/api/queue/update/${id}`, {
         status: newStatus,
       });
 
-      const res = await axios.get("http://localhost:5000/api/dashboard");
+      const res = await axios.get(`${API}/api/dashboard`);
       setWaterPoints(res.data);
 
       alert(`Queue updated to ${newStatus}`);
