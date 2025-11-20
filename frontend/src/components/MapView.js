@@ -3,9 +3,8 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import MapViewSkeleton from "./skeletons/MapViewSkeleton";
 import API from "../api";
-
+import MapViewSkeleton from "./skeletons/MapViewSkeleton";
 
 // Marker icons
 const safeIcon = L.icon({
@@ -45,10 +44,7 @@ export default function MapView() {
   const [selectedPoint, setSelectedPoint] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // DEPLOYED BACKEND URL
-  const API = "https://aquaproject.onrender.com";
-
-  // Fetch data
+  // Fetch data from deployed backend
   useEffect(() => {
     axios
       .get(`${API}/api/dashboard`)
@@ -69,9 +65,13 @@ export default function MapView() {
     const message = prompt("Describe the issue:");
     if (!message) return;
 
-    await axios.post(`${API}/api/issues/report/${id}`, { message });
-
-    alert("Issue reported successfully!");
+    try {
+      await axios.post(`${API}/api/issues/report/${id}`, { message });
+      alert("Issue reported successfully!");
+    } catch (err) {
+      console.error("Report issue error:", err);
+      alert("Failed to report issue.");
+    }
   };
 
   // Update queue
