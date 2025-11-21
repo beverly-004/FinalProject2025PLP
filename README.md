@@ -30,15 +30,15 @@ The system is built for transparency, efficiency, and better community water acc
 
 🔗 [https://aquaproject.onrender.com](https://aquaproject.onrender.com)
 
-### **GitHub Repository:**
+### GitHub Repository:
 
 🔗 [https://github.com/beverly-004/FinalProject2025PLP](https://github.com/beverly-004/FinalProject2025PLP)
 
 ---
 
-# 🧱 **Tech Stack**
+# 🧱 Tech Stack
 
-### **Frontend**
+### Frontend
 
 * React.js (CRA)
 * Tailwind CSS
@@ -47,7 +47,7 @@ The system is built for transparency, efficiency, and better community water acc
 * Leaflet Maps
 * Framer Motion (animations)
 
-### **Backend**
+### Backend
 
 * Node.js + Express.js
 * MongoDB Atlas
@@ -57,9 +57,9 @@ The system is built for transparency, efficiency, and better community water acc
 
 ---
 
-# 📦 **Features**
+# 📦 Features
 
-### 🔵 **User Features**
+### 🔵 User Features
 
 * View all water points with safety status + queue level
 * Interactive map view using Leaflet
@@ -68,7 +68,7 @@ The system is built for transparency, efficiency, and better community water acc
 * View issue history
 * Report issues
 
-### 🟢 **Admin / System Features**
+### 🟢 Admin / System Features
 
 * Add new water points
 * Update queue status
@@ -78,7 +78,7 @@ The system is built for transparency, efficiency, and better community water acc
 
 ---
 
-# 🗺️ **Screens & Pages**
+# 🗺️ Screens & Pages
 
 | Page                  | Description                        |
 | --------------------- | ---------------------------------- |
@@ -93,9 +93,9 @@ The system is built for transparency, efficiency, and better community water acc
 
 ---
 
-# 🛠️ **Project Setup (Local Development)**
+# 🛠️ Project Setup (Local Development)
 
-### **Clone repository**
+### Clone repository
 
 ```bash
 git clone https://github.com/beverly-004/FinalProject2025PLP
@@ -104,21 +104,21 @@ cd FinalProject2025PLP
 
 ---
 
-## **1️⃣ Backend Setup**
+## 1️⃣ Backend Setup
 
 ```bash
 cd backend
 npm install
 ```
 
-### **Create .env file**
+### Create .env file
 
 ```
 MONGO_URI=Your MongoDB Atlas Connection String
 PORT=5000
 ```
 
-### **Run backend**
+### Run backend
 
 ```bash
 npm run dev
@@ -126,7 +126,7 @@ npm run dev
 
 ---
 
-## **2️⃣ Frontend Setup**
+## 2️⃣ Frontend Setup
 
 ```bash
 cd frontend
@@ -145,14 +145,14 @@ export default API;
 
 ---
 
-# 🌐 **Deployment**
+# 🌐 Deployment
 
-### **Frontend (Vercel)**
+### Frontend (Vercel)
 
 * Build Command: `react-scripts build`
 * Output Directory: `build`
 
-### **Backend (Render)**
+### Backend (Render)
 
 * Root Directory: `/backend`
 * Build Command: `npm install`
@@ -160,29 +160,29 @@ export default API;
 
 ---
 
-# 🧪 **API Endpoints**
+# 🧪 API Endpoints
 
-### **Water Points**
+### Water Points
 
 ```
 GET /api/waterpoints/all
 POST /api/waterpoints/add
 ```
 
-### **Dashboard**
+### Dashboard
 
 ```
 GET /api/dashboard
 ```
 
-### **Issues**
+### Issues
 
 ```
 POST /api/issues/report/:id
 GET  /api/history/:id
 ```
 
-### **Admin**
+### Admin
 
 ```
 POST /api/admin/clear/:id
@@ -193,16 +193,15 @@ POST /api/queue/update/:id
 
 
 
-# 🎯 **Project Goal**
+# 🎯 Project Goal
 
 AquaLink aims to **democratize access to clean water** by providing communities with real-time insights, predictive trends, and transparent data on water resources.
 
 ---
 
-# 👩‍💻 **Author**
+#  Author
 
 **Beverly Chikoti**
 Software Engineering | PLP
 
-.
 
