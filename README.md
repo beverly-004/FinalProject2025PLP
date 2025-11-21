@@ -78,18 +78,6 @@ The system is built for transparency, efficiency, and better community water acc
 
 ---
 
-# 🗺️ Screens & Pages
-
-| Page                  | Description                        |
-| --------------------- | ---------------------------------- |
-| **Landing Page**      | Introduction + feature highlights  |
-| **Water Points Page** | List of all water points           |
-| **Map View**          | Interactive Leaflet map            |
-| **Add Water Point**   | Admin page to add new sites        |
-| **Issue History**     | List of issues per water point     |
-| **About Page**        | Project mission, vision & timeline |
-| **Contact Page**      | Contact section                    |
-| **404 Not Found**     | Friendly error page                |
 
 ---
 
